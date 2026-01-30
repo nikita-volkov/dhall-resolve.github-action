@@ -1,0 +1,17 @@
+name: dhall-resolve
+description: Build and package Dhall sources as one file
+author: Nikita Volkov
+branding:
+  color: blue
+inputs:
+  file:
+    description: Path to source file
+    required: true
+outputs:
+  path:
+    description: Path to the generated file
+runs:
+  using: docker
+  image: docker://ghcr.io/nikita-volkov/dhall-resolve.github-action
+  env:
+    file: ${{ inputs.file }}
