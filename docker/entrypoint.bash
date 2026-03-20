@@ -2,7 +2,14 @@
 
 output="resolved.dhall"
 
-dhall resolve --file "$file" > "$output"
+resolve_args=(--file "$file")
+
+if [ "$cse" = "true" ]
+then
+  resolve_args=(--cse "${resolve_args[@]}")
+fi
+
+dhall resolve "${resolve_args[@]}" > "$output"
 
 # Verify the frozen file was created and is not empty
 if [ ! -s "$output" ]
