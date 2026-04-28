@@ -16,7 +16,7 @@ outputs:
     description: Path to the generated file
 runs:
   using: docker
-  image: docker://ghcr.io/nikita-volkov/dhall-resolve.github-action:35d7a928f5650d4b08bfbbe9d4edbfbf3e6aa889
+  image: docker://ghcr.io/nikita-volkov/dhall-resolve.github-action:192250e70e56f859d0132c34f773800d0b9b54d1
   env:
     file: ${{ inputs.file }}
     cse: ${{ inputs.cse }}
