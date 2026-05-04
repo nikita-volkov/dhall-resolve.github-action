@@ -4,9 +4,9 @@ output="resolved.dhall"
 
 resolve_args=(--file "$file")
 
-if [ "$cse" = "true" ]
+if [ "$minify" = "true" ]
 then
-  resolve_args=(--cse "${resolve_args[@]}")
+  resolve_args=(--minify "${resolve_args[@]}")
 fi
 
 dhall resolve "${resolve_args[@]}" > "$output"

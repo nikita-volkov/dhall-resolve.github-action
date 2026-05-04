@@ -7,8 +7,8 @@ inputs:
   file:
     description: Path to source file
     required: true
-  cse:
-    description: Apply common subexpression elimination to reduce output size
+  minify:
+    description: Minify the output through CSE and DCE
     required: false
     default: 'false'
 outputs:
@@ -19,4 +19,4 @@ runs:
   image: docker://ghcr.io/nikita-volkov/dhall-resolve.github-action:b168ecbce02afa1aa206a5da8325e1a590371124
   env:
     file: ${{ inputs.file }}
-    cse: ${{ inputs.cse }}
+    minify: ${{ inputs.minify }}
