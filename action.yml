@@ -16,7 +16,7 @@ outputs:
     description: Path to the generated file
 runs:
   using: docker
-  image: docker://ghcr.io/nikita-volkov/dhall-resolve.github-action:49fd0e831117915041eab6b79c14f8b073709fd0
+  image: docker://ghcr.io/nikita-volkov/dhall-resolve.github-action:4ae18b7efdedab84338d2d086452fd3c8eb148dc
   env:
     file: ${{ inputs.file }}
     minify: ${{ inputs.minify }}
